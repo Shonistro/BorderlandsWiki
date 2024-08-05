@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --background: #282828;
+  --text: #d9d9db;
+  --bright-text: #f4f4f4;
+  --dim-text: #a4a4a8;
+  --bg-shade: #191919;
+  --component: #373737;
+  --error: #ff5751;
+  --attention: #fbc02d;
+  --dark-black: #101010;
+  --success: #2ba640;
+  --bright-component: #464646;
+  --green-background: #263b29;
+  --red-background: #3b2626;
+  --positive: #7ee67e;
+  --negative: #ff809f;
+  --link: #39a6ff;
+  --blue-background: #252a3a;
+  --purple-background: #3b2634;
+}
+
+
+body{
+  background-color: var(--background);
+  color: var(--text);
+  background-image: url('https://assets-global.website-files.com/5ff36780a108495c598ce192/61a217dea2db7e386256437f_bg-dots.svg');
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: .75rem;
+  background-attachment: fixed;
+  padding-top: 6rem;
+  padding-left: 6rem;
+  padding-right: 1.5rem;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.35;
+}
