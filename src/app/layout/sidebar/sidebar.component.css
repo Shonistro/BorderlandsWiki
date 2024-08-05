@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+.sidebar {
+  position: fixed;
+  top: 3.75rem; /* Adjust based on your header height */
+  left: 0;
+  width: 60px;
+  height: calc(100vh - 3.75rem);
+  background-color: #2b2b2b;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.sidebar:hover,
+.sidebar.active {
+  width: 250px;
+}
+
+.sidebar-menu,
+.sidebar-footer {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.sidebar-item span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .sidebar-item span,
+.sidebar.active .sidebar-item span {
+  opacity: 1;
+}
