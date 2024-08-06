@@ -9,9 +9,15 @@ import {SidebarService} from "../sidebar/sidebar.service";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
-  constructor(private sidebarService: SidebarService) {}
-  toggleSidebar() {
-    this.sidebarService.toggleSidebar();
+export class HeaderComponent   {
+
+  constructor(private sidebarService: SidebarService) {
   }
+
+  toggleSidebar(){
+    this.sidebarService.toggleSideBar()
+  }
+
+
+
 }

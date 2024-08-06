@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 .sidebar {
   position: fixed;
-  top: 3.75rem; /* Adjust based on your header height */
+  top: 3.75rem;
   left: 0;
   width: 60px;
   height: calc(100vh - 3.75rem);
@@ -12,13 +13,11 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-.sidebar:hover,
-.sidebar.active {
+.sidebar:hover, .sidebar.active {
   width: 250px;
 }
 
-.sidebar-menu,
-.sidebar-footer {
+.sidebar-menu, .sidebar-footer {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -27,6 +26,7 @@
 .sidebar-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
   color: #ffffff;
   text-decoration: none;
@@ -49,7 +49,41 @@
   transition: opacity 0.3s ease;
 }
 
-.sidebar:hover .sidebar-item span,
-.sidebar.active .sidebar-item span {
+.sidebar:hover .sidebar-item span, .sidebar.active .sidebar-item span {
   opacity: 1;
+}
+
+.sidebar-item .arrow {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.sidebar-item .arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.sub-menu {
+  list-style-type: none;
+  padding-left: 50px;
+  background-color: var(--component);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, opacity 0.2s ease-out;
+  opacity: 0;
+}
+
+.sub-menu.expanded {
+  max-height: 500px; /* Adjust based on your needs */
+  opacity: 1;
+}
+
+.sub-item {
+  padding: 8px 10px;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+.sub-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

@@ -1,12 +1,27 @@
 <nav class="sidebar" [class.active]="isOpen">
-
   <ul class="sidebar-menu">
-    <li><a href="#" class="sidebar-item"><img src="assets/sidebarImg/worderlands3-icon.png" alt="Wonderlands">Wonderlands</a></li>
-    <li><a href="#" class="sidebar-item"><img src="assets/sidebarImg/borderlands33-icon.png" alt="Borderlands 3">Borderlands 3</a></li>
-    <li><a href="#" class="sidebar-item"><img src="assets/sidebarImg/borderlands2-icon.png" alt="Borderlands 2">Borderlands 2</a></li>
-    <li><a href="#" class="sidebar-item"><img src="assets/sidebarImg/borderlandstps-icon.png" alt="Borderlands TPS">Borderlands TPS</a></li>
-    <li><a href="#" class="sidebar-item"><img src="assets/sidebarImg/borderlands1-icon.png" alt="Borderlands 1">Borderlands 1</a></li>
+    @for (item of menuItems; track item.name) {
+      <li>
+        <a href="#" class="sidebar-item" (click)="toggleSubMenu(item, $event)">
+          <img [src]="item.icon" [alt]="item.name">
+          <span>{{ item.name }}</span>
+          <span class="arrow" [class.expanded]="item.isExpanded">▼</span>
+        </a>
+        <ul class="sub-menu" [class.expanded]="item.isExpanded">
+          @for (subItem of item.subItems; track subItem) {
+            <li><a href="#" class="sub-item">{{ subItem }}</a></li>
+          }
+        </ul>
+      </li>
+    }
   </ul>
 
+
+
+<!--  <ul class="sidebar-footer">-->
+<!--    <li><a href="#" class="sidebar-item"><img src="assets/images/calculator-icon.png" alt="DPS Calculator"><span>DPS Calculator</span></a></li>-->
+<!--    <li><a href="#" class="sidebar-item"><img src="assets/images/support-icon.png" alt="Support Project"><span>Support Project</span></a></li>-->
+<!--    <li><a href="#" class="sidebar-item"><img src="assets/images/community-icon.png" alt="Join Community"><span>Join Community</span></a></li>-->
+<!--  </ul>-->
 
 </nav>
